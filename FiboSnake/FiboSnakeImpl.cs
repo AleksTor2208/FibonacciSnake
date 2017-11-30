@@ -1,4 +1,4 @@
-﻿using FiboSnake.Factory;
+﻿
 using FiboSnake.View;
 using System;
 using System.Collections.Generic;
@@ -44,16 +44,7 @@ namespace FiboSnake
         {
             int index = 0;
             while (index < N)
-            {
-                AssignLine(new FiboSnakeData
-                {
-                    Length = DPZ,
-                    SnakeTable = snakeTable,
-                    FiboList = fiboList,
-                    Coordinate = x,
-                    Step = Step.Add
-                });
-
+            {              
                 for (int a = 0; a < DPZ; a++)
                 {                    
                     if (index >= N) break;
@@ -88,19 +79,8 @@ namespace FiboSnake
                 }
                 WPZ++;
             }
-        }
-
-        private void AssignLine(FiboSnakeData fiboSnakeData)
-        {
-            for (int d = 0; d < WPZ; d++)
-            {
-                if (index >= N) break;
-                snakeTable[y, x] = new Cell(x, y, fiboList[index]);
-                if (d == (WPZ - 1)) break;
-                y--; index++;
-            }
-            WPZ++;
-        }
+        }        
+        
 
         private List<string> GetFiboList()
         {
@@ -121,11 +101,6 @@ namespace FiboSnake
             var result = n / height;
             if (hasRemainder) result += 1;
             return result;
-        }
-
-        private void InitTable(int heigth, int width)
-        {
-              
-        }
+        }        
     }
 }
