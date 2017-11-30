@@ -43,7 +43,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Add_Sub.cs" />
-    <Compile Include="Factory\FiboSnakeData.cs" />
     <Compile Include="Model\Cell.cs" />
     <Compile Include="FiboSnakeImpl.cs" />
     <Compile Include="Program.cs" />
